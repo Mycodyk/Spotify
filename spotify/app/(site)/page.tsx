@@ -1,5 +1,14 @@
+import { Header } from "@/components/Header";
+
+interface HeaderProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
 export default function Home() {
     return (
-      <h1>Main Container</h1>
+      <div className="bg-neutral-900 rounded-lg h-full overflow-hidden overflow-y-auto">
+        <Header/>
+      </div>
     );
   }
