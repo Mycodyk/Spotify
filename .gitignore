@@ -3,6 +3,8 @@
 
 password.txt
 
+.env.local
+
 # dependencies
 /node_modules
 /.pnp
