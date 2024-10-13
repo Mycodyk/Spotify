@@ -1,5 +1,6 @@
 "use client"
 
+
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { Box } from './Box';

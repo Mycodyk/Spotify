@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Figtree } from 'next/font/google'
 import { Sidebar } from "@/components/Sidebar";
-import { SupabaseProvider } from "./providers/SupaBase";
+import SupabaseProvider from "@/providers/Supabase";
+import './global.css'
 
 const font = Figtree({ subsets: ['latin']})
 
