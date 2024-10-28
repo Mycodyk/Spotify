@@ -1,10 +1,16 @@
 "use client"
 import { TbPlaylist } from "react-icons/tb"
 import { AiOutlinePlus } from "react-icons/ai"
+import {useAuthModal} from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
 
 export const Libriary = () => {
+    const authModal = useAuthModal();
+    const { user } = useUser()
     const onClick = () => {
-        //открытие модалки для загрузки песен
+        if (!user) {
+            return authModal.onOpen();
+        }
     }
     return(
         <div className="flex flex-col">

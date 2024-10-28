@@ -11,6 +11,7 @@ import { useAuthModal } from "@/hooks/useAuthModal";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
 import {zeroRightClassName} from "react-remove-scroll-bar";
+import toast from "react-hot-toast";
 
 
 interface HeaderProps {
@@ -35,7 +36,9 @@ export const Header: React.FC<HeaderProps> = ({
         router.refresh();
 
         if (error){
-            console.log(error)
+            toast.error(error.message);
+        } else {
+            toast.success('Logged out!');
         }
     }
 
