@@ -10,6 +10,7 @@ import { Button } from "./Button";
 import { useAuthModal } from "@/hooks/useAuthModal";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
+import {zeroRightClassName} from "react-remove-scroll-bar";
 
 
 interface HeaderProps {
@@ -33,7 +34,9 @@ export const Header: React.FC<HeaderProps> = ({
         //Reset any playing songs
         router.refresh();
 
-        
+        if (error){
+            console.log(error)
+        }
     }
 
     return (
