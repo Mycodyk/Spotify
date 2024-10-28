@@ -3,14 +3,18 @@ import { TbPlaylist } from "react-icons/tb"
 import { AiOutlinePlus } from "react-icons/ai"
 import {useAuthModal} from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
+import {useUploadModal} from "@/hooks/useUploadModal";
 
 export const Libriary = () => {
     const authModal = useAuthModal();
-    const { user } = useUser()
+    const UploadModal = useUploadModal();
+    const { user, subscription } = useUser();
     const onClick = () => {
         if (!user) {
             return authModal.onOpen();
         }
+        // check for subscription
+        return UploadModal.onOpen();
     }
     return(
         <div className="flex flex-col">
