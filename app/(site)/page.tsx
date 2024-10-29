@@ -1,9 +1,13 @@
 import { Header } from "@/components/Header";
 import { ListItem } from "@/components/ListItem";
+import {getSongs} from "@/actions/getSongs";
+import {PageContent} from "@/app/(site)/components/PageContent";
 
 export const revalidate = 0;
 
-export default function Home() {
+export default async function Home() {
+    const songs = await getSongs();
+
     return (
       <div className="bg-neutral-900 rounded-lg h-screen overflow-hidden">
         <Header>
@@ -39,9 +43,7 @@ export default function Home() {
               Newest songs
             </h1>
           </div>
-          <div>
-            List Songs
-          </div>
+          <PageContent songs={songs} />
         </div>
       </div>
     );
